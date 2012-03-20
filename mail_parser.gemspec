@@ -15,7 +15,9 @@ Gem::Specification.new do |s|
   s.files = [
     "lib/mail_loader.rb",
     "lib/mail_parser.rb",
-    "lib/mail_parser/mail_parser.rb"
+    "lib/mail_parser/mail_parser.rb",
+    "lib/patterns/amazon_pattern.rb",
+    "lib/patterns/pattern.rb"
   ]
   s.homepage = "http://github.com/Rafe/mail_parser"
   s.require_paths = ["lib"]
