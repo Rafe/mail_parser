@@ -5,17 +5,17 @@
 
 Gem::Specification.new do |s|
   s.name = "mail_parser"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jimmy Chao"]
-  s.date = "2012-03-19"
+  s.date = "2012-03-20"
   s.description = "Parser for parsing imformation by regex in mail"
   s.email = ""
   s.files = [
+    "lib/mail_loader.rb",
     "lib/mail_parser.rb",
-    "lib/mail_parser/mail_parser.rb",
-    "lib/samples/mail_loader.rb"
+    "lib/mail_parser/mail_parser.rb"
   ]
   s.homepage = "http://github.com/Rafe/mail_parser"
   s.require_paths = ["lib"]
@@ -27,9 +27,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<mail_parser>, [">= 0"])
     else
+      s.add_dependency(%q<mail_parser>, [">= 0"])
     end
   else
+    s.add_dependency(%q<mail_parser>, [">= 0"])
   end
 end
 
