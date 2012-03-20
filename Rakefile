@@ -10,7 +10,7 @@ begin
     gem.email = ""
     gem.homepage = "http://github.com/Rafe/mail_parser"
     gem.authors = ["Jimmy Chao"]
-    gem.test_files = ["spec/*.rb"]
+    gem.test_files = Dir.glob('spec/*.rb')
     gem.files = ["lib/*.rb","lib/*/*.rb"]
   end
   Jeweler::GemcutterTasks.new

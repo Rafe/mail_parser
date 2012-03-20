@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.19"
   s.summary = "Parser for parsing imformation by regex in mail"
-  s.test_files = ["spec/*.rb"]
+  s.test_files = ["spec/amazon_pattern_spec.rb", "spec/mail_parser_spec.rb", "spec/pattern_spec.rb", "spec/spec_helper.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
