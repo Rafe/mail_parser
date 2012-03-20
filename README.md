@@ -2,7 +2,13 @@
 
 A simple text parser using regex 
 
-##Example::
+##Install
+
+    gem install mail_parser
+
+##Example
+
+    require "mail_parser"
 
     mail = <<- HTML
       Title:: "Some mail"
@@ -24,7 +30,8 @@ A simple text parser using regex
 
       #match multiple items
       m.match_until :items, /Thanks/ do |m|
-        m.match :item , /"(,*)"/
+        m.match :item , /"(.*)"/
       end
 
     end
+    #=> {:title=>"Some mail", :email=>"example@mail.com", :items=>[{:item=>"Some item"}, {:item=>"Some item"}]}

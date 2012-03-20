@@ -5,13 +5,16 @@
 
 Gem::Specification.new do |s|
   s.name = "mail_parser"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jimmy Chao"]
   s.date = "2012-03-20"
   s.description = "Parser for parsing imformation by regex in mail"
   s.email = ""
+  s.extra_rdoc_files = [
+    "README.md"
+  ]
   s.files = [
     "lib/mail_loader.rb",
     "lib/mail_parser.rb",
