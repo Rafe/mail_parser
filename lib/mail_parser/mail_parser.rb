@@ -25,6 +25,8 @@ class MailParser
     if not @pattern.nil? and not @pattern.block.nil?
       @pattern.block.call self
     end
+
+    @data
   end
 
   def match(field, *patterns)
