@@ -22,7 +22,7 @@ class MailParser
     end
 
     #call the injected pattern
-    if not @pattern.nil? and not @pattern.block.nil?
+    if not @pattern.nil? and @pattern.respond_to?(:block)
       @pattern.block.call self
     end
 
@@ -39,7 +39,7 @@ class MailParser
       target_pattern = pattern
     end
 
-    for line in @body[@index..@body.length] 
+    @body[@index..@body.length].each do |line|
       if @stop and line =~ @stop
         throw :halt
       end
