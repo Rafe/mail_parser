@@ -10,9 +10,8 @@ class MailParser
   end
 
   def parse(body, *options, &block)
-    if options.include? :html
-      body = truncate_html(body)
-    end
+    body = truncate_html(body) if options.include? :html
+
     @body = body.split("\n") 
     @index = 0
     @data = {}
@@ -22,7 +21,7 @@ class MailParser
     end
 
     #call the injected pattern
-    if not @pattern.nil? and @pattern.respond_to?(:block)
+    if !@pattern.nil? && @pattern.respond_to?(:block)
       @pattern.block.call self
     end
 
@@ -40,13 +39,13 @@ class MailParser
     end
 
     @body[@index..@body.length].each do |line|
-      if @stop and line =~ @stop
+      if @stop && line =~ @stop
         throw :halt
       end
-      if !invoked and line =~ pattern
+      if !invoked && line =~ pattern
         invoked = true
       end
-      if invoked and line =~ target_pattern
+      if invoked && line =~ target_pattern
         @data[field] = target_pattern.match(line)[1]
         @index += 1
         return
